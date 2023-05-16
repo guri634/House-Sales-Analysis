@@ -131,9 +131,9 @@ order by 2;
 update housedata
 set SoldAsVacant = 
 	case
-		when SoldAsVacant = 'Y' then 'Yes'
-        when SoldAsVacant = 'N' then 'No'
-        else SoldAsVacant
+ 	    when SoldAsVacant = 'Y' then 'Yes'
+            when SoldAsVacant = 'N' then 'No'
+            else SoldAsVacant
 	end;
 ```
 
@@ -150,14 +150,13 @@ order by 2;
 with RowNumCTE as(
 select *,
 	row_number() over (
-    partition by ParcelID,
-				 PropertyAddress,
-                 SalePrice,
-                 SaleDate,
-                 LegalReference
-                 order by 
-					UniqueID
-                    ) row_num
+    			   partition by ParcelID,
+			   PropertyAddress,
+                   	   SalePrice,
+                 	   SaleDate,
+                 	   LegalReference
+	 			order by UniqueID
+        ) row_num
 from housedata
 )
 select *
@@ -175,14 +174,13 @@ INSERT INTO housedataupdated
 	with RowNumCTE as(
 	select *,
 		row_number() over (
-		partition by ParcelID,
-					 PropertyAddress,
-					 SalePrice,
-					 SaleDate,
-					 LegalReference
-					 order by 
-						UniqueID
-						) row_num
+				   partition by ParcelID,
+				   PropertyAddress,
+				   SalePrice,
+				   SaleDate,
+				   LegalReference
+				 	 order by UniqueID
+		) row_num
 	from housedata
 	)
 	select UniqueID, ParcelID, LandUse, PropertyAddress, SaleDate, SalePrice, LegalReference,
