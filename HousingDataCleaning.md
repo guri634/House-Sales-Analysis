@@ -1,5 +1,5 @@
 # House Data Cleaning
-You can download the dataset from [here](https://github.com/guri634/House-Sales-Analysis/blob/main/Housing%20Data.csv)
+You can download the dataset from [here](https://github.com/guri634/House-Sales-Analysis/blob/main/Housing%20Data.csv).
 
 Download sql executable file from [here](https://github.com/guri634/House-Sales-Analysis/blob/main/Housing_data_cleaning.sql) for MySQL Database.
 
